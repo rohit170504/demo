@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display Object</title>
+</head>
+<body>
+  <p id="p1">
+    <b>Object is displayed using properties</b>
+  </p>
+
+  <p id="p2">
+    <b>Displaying Object using Loop properties</b>
+  </p>
+
+  
+  <p id="p3">
+    Displaying Object using Loop properties
+  </p>
+
+  <p id="p4">Displaying object using Array</p>
+  <p id="p5"><b>Displaying object using Array<br></b></p>
+
+  <p id="p6"> Displaying Object using JSON.stringify method </p>
+
+  <p id="p7"></p>
+
+  <script>
+
+    //Creating an Object
+const brand = {
+      car : "Tata",
+      food: "parle",
+      clothing: "khadi",
+      style: "Lenskart",
+      shoes:"Bata",
+      Est : 2000
+    }
+
+    
+    // 1. Using name properties:
+    document.getElementById("p1").innerHTML += "<br>" +
+    "The car brand" + " " + "-" + brand.car + "<br>" + 
+    "The food brand  " + " " + "-" + brand.food + "<br>" +
+    "The clothing brand " + " " + "-" + brand.clothing + "<br>" +
+    "The style brand  " + " " + "-" + brand.style + "<br>" +
+    "The shoes brand  " + " " + "-" + brand.shoes + "<br>" 
+    
+
+    //2. Displaying Object using Loop properties
+
+    let text = "";
+    for (let key in brand){
+      text += key + ":" + brand[key] + "<br>";
+    };
+
+    document.getElementById("p2").innerHTML += text;
+
+    let text2 = "";
+    for (let x in brand){
+      text2 += brand[x] + " ";
+    };
+
+    document.getElementById("p3").innerHTML = text2;
+
+//Displaying object using Array
+    /* Object.values() creates an array from the property values */
+
+    // Create an array
+    const newArray = Object.values(brand);
+
+    //Displaying the array
+
+    document.getElementById("p4").innerHTML = newArray; //Here newArray has by default a join(",") is assign .So result give array into string seperated with " , ". We can change it like newArray.join("<br>") to break line.
+
+    document.getElementById("p5").innerHTML += newArray.join("<br>"); 
+
+
+    // Stringify Object 
+
+    let newString = JSON.stringify(brand);
+
+    //Display string 
+
+    //First way using variable
+    document.getElementById("p6").innerHTML = newString;
+
+    // Second way 
+    
+    document.getElementById("p7").innerHTML = JSON.stringify(brand);
+
+
+
+
+    
+  
+
+
+
+    
+
+  </script>
+</body>
+</html>

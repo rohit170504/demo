@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object in Javascript</title>
+
+</head>
+<body>
+  
+  <h>
+    <p id="p1">Object Using Properties</p>
+  </h>
+  <script>
+    
+    //Create an object
+    const college = {
+      name : "SIT",
+      faculty : "Good",
+      building : "dekhne me bada hai",
+      system : "Change ki jaroorat hai", joining : "2022"
+    }
+
+    // create a  copy
+    const x = college;
+
+    // Change faculty in both
+    x.faculty = "Very good";
+    console.log(college.name + " " + "has" + " " + x.faculty + " " + "faculty.");
+
+    delete college.building;
+    console.log(college.name + " " + "has" + " " + college.building + " " + "building.");
+
+
+/* Displaying Object in Javascript
+
+Output - [object Object]
+
+It can't be displayed directly.
+It can be displayed using different ways as below.
+
+*/
+
+
+//Creating an Object
+const brand = {
+      car : "Tata",
+      food: "parle",
+      clothing: "khadi",
+      style: "Lenskart",
+      shoes:"Bata"
+    }
+    
+    // 1. Using name properties:
+    document.getElementById("p1").innerHTML =
+    "The car brand   " + " " + "-" + brand.car + "<br>" + 
+    "The food brand  " + " " + "-" + brand.food + "<br>" 
+   
+
+
+
+ 
+
+    // document.getElementById("p1").innerHTML = JSON.stringify(brand, null, 2).replace(/\n/g, "<br>").replace(/ /g, "&nbsp;");
+
+
+
+
+  </script>
+</body>
+</html>
