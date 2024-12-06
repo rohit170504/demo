@@ -6,16 +6,88 @@
 </head>
 <body>
   <script>
+    /*
     const product = {
       name: 'socks',
-      price: 100
+      price: 100,
+      rating : {
+            stars: 4.5,
+            count : 86
+      },
+      fun : function function1(){
+        console.log('Function inside object');
+      }
     };
+
     console.log(product);
     console.log(product.name);
     console.log(product.price);
+    product.fun();
 
     product.name = 'cotton sock';
     console.log(product);
+
+//JSON -Javascript Object Notation
+
+    console.log(JSON.stringify(product));
+    console.log(typeof JSON.stringify(product));
+
+    const jsonstring = JSON.stringify(product);
+
+    console.log(JSON.parse(jsonstring)); */
+
+    //Auto Boxing
+
+    // strings also have properties
+    console.log('hello'.length);
+    console.log('hello'.toUpperCase());
+    console.log('HELLO'.toLowerCase()); 
+
+    //Copy by reference
+
+    const object1 = {
+      msg: 'Hi'
+    };
+
+    const object2 = object1;
+
+    object1.msg = 'Good job';
+    console.log(object1);
+    console.log(object2);
+
+    const object3 = {
+      msg : 'Good job'
+    };
+
+    console.log(object3 === object1);  //Not equal even if string is same bcz it compares references
+
+    console.log(object2 === object1); //here reference is same . It has same reference location.
+    // Therefore comparing two variables means comparing two references not the values inside.
+
+    //Shortcut for object 
+
+    const object4 = {
+      msg : 'Good job',
+      price: 45
+    };
+
+    //const msg = object4.msg; // if variale and property have same name like here 'msg', we use shortcut like below
+    const { msg, price } = object4;
+    console.log(msg);
+    console.log(price);
+
+    //Shorthand property . if object has same property and value
+
+    const object5 = {
+      // msg : msg
+      msg,
+      method : function function1(){
+        console.log('method');
+      }
+    };
+    console.log(object5);
+    object5.method();
+
 
   </script>
 </body>

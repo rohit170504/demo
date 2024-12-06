@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>DOM</title>
+</head>
+
+<body>
+  <p>Subcribe my YouTube</p>
+  <button onclick="
+    subscribe();
+  " class="js-subscribe-btn">
+    Subscribe
+  </button>
+
+  <script>
+    function subscribe() {
+      const buttonElement = document.querySelector('.js-subscribe-btn');
+      //innerText used below to avoid extra spaces in Subscribe button 
+      if (buttonElement.innerText === 'Subscribe') {
+        buttonElement.innerHTML = 'Subscribed';
+      } else {
+        buttonElement.innerHTML = 'Subscribe';
+      }
+    }
+  </script>
+
+</body>
+
+</html>

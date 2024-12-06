@@ -26,17 +26,49 @@
     score.wins = 0;
     score.losses=0;
     score.ties = 0;
+    localStorage.removeItem('score');
+
   ">Reset Score</button>
   
 
 
   <script>
 
-    const score = {
+  /*  const score = {
       wins : 0,
       losses : 0,
       ties : 0
-    };
+    }; */
+
+    // let score = JSON.parse(localStorage.getItem('score')); 
+     
+    // We can use Boolean shortcut for default value as below
+    let score = JSON.parse(localStorage.getItem('score')) || {
+      wins : 0,
+      losses : 0,
+      ties : 0
+      };
+
+
+    //As we remove localStorage , it gives null .To solve this ,we set default value at null
+
+    /*
+    if (score === null){
+      score = {
+      wins : 0,
+      losses : 0,
+      ties : 0
+      }
+    }
+      */
+
+    //we can above us !score as shortcut  for score ==== null
+
+    // console.log(localStorage.getItem('message'));
+
+    // console.log(JSON.parse(localStorage.getItem('score')));
+    
+    // We converted JSON into js object .So removing this from here and replacing score object to local storage.
 
     function playGame(playerMove) {
 
@@ -82,6 +114,11 @@
       } else if (result === 'Tie.'){
         score.ties += 1;
       }
+
+      //Saving score in local storoge .So that scores don't get deleted.
+
+      // localStorage.setItem('message', 'Hello');
+      localStorage.setItem('score', JSON.stringify(score));
 
       alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
 Wins :${score.wins}, Losses: ${score.losses}, Ties : ${score.ties} `);
